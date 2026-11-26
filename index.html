@@ -1,1 +1,61 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080c16"><meta name="description" content="A science-informed recall and interview training arcade for software engineers."><title>Recall.run · SWE Interview Training Arcade</title><link rel="stylesheet" href="styles.css"></head><body><div class="app"><aside class="sidebar" id="sidebar"></aside><div class="workspace"><header class="topbar"><div class="top-left"><button class="btn small mobile-menu" aria-label="Open navigation" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button> MISSION CONTROL <span> / <span class="status-dot"></span> Training online</span></div><div class="top-right"><span class="chip due-badge">0 reviews due</span><span class="chip xp-badge">✳ <b>0</b> XP</span><span class="top-avatar" aria-label="Player avatar">P</span></div></header><div id="content"></div></div></div><script src="data.js"></script><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080c16">
+<meta name="description" content="Spaced repetition for GPU systems, LLM serving, distributed training, and C++.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Recall.run">
+<title>Recall.run</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<script>
+try {
+  var saved = JSON.parse(localStorage.getItem('recall_run_v2') || 'null');
+  if (saved && saved.settings && saved.settings.theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', '#eef2f7');
+  }
+} catch (e) {}
+</script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div class="top-left">
+        <button class="btn small mobile-menu" type="button" data-act="menu" aria-label="Open navigation">☰</button>
+        <span class="crumb">Command</span>
+        <span> / <span class="status-dot"></span><span class="due-badge">0 due</span></span>
+      </div>
+      <div class="top-right">
+        <button class="btn small ghost" type="button" id="themeBtn" data-act="theme">Light</button>
+        <span class="chip xp-badge">✳ <b>0</b> XP</span>
+        <span class="top-avatar" aria-label="Shreyash">S</span>
+      </div>
+    </header>
+    <div id="content"></div>
+  </div>
+</div>
+<script src="engine.js"></script>
+<script src="format.js"></script>
+<script src="store.js"></script>
+<script src="decks/cuda.js"></script>
+<script src="decks/dataflow.js"></script>
+<script src="decks/serving.js"></script>
+<script src="decks/training.js"></script>
+<script src="decks/rl.js"></script>
+<script src="decks/systems.js"></script>
+<script src="decks/cpp.js"></script>
+<script src="decks/dsa.js"></script>
+<script src="data.js"></script>
+<script src="games.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
